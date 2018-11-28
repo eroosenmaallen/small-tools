@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# From https://gist.github.com/fightyz/99116f2ffd4bb0ebe6e74589d9fc9344
+# By Yang Zhou, https://github.com/fightyz
+
+TMPDIR=${TMPDIR:-/tmp}  # default to /tmp if TMPDIR isn't set
+F=$(mktemp $TMPDIR/tosubl-XXXXXXXX)
+cat >| $F  # use >| instead of > if you set noclobber in bash
+subl $F --wait
+sleep .3  # give subl a little time to open the file
+rm -f $F  # file will be deleted as soon as subl closes it
