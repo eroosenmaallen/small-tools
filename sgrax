@@ -1,3 +1,6 @@
 #! /bin/sh
 
-printf "%s\n" $*
+while [ "$1" ] ; do
+  printf "%s\n" "$1"
+  shift
+done
