@@ -1,4 +1,17 @@
-#! /bin/sh
+#! /bin/bash
+
+usage() {
+  cat <<EOT
+Usage: sgrax arg1 arg2 ... argn
+Output arguments, one per line, on STDOUT
+
+Option:
+  --help      Show this help
+EOT
+  exit 1
+}
+
+[[ $1 = "--help" ]] && usage
 
 while [ "$1" ] ; do
   printf "%s\n" "$1"
